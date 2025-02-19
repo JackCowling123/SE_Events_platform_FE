@@ -1,4 +1,6 @@
 import { useState } from "react";
+import React from 'react';
+
 
 const URL = "https://se-events-platform-be.onrender.com";
 

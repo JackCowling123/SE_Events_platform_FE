@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import React from 'react';
+
 
 const API_URL = "https://se-events-platform-be.onrender.com/api/auth";
 
