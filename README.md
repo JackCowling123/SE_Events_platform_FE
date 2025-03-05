@@ -1,19 +1,29 @@
 # Events Platform
 
 ## Project Overview
-This is a web-based platform that allows community members to view, sign up for, and manage events. Users can add events to their Google Calendar, and staff members have additional permissions to create and manage events.
+The Events Platform is a web-based application designed to help communities easily organize, manage, and participate in events. Originally envisioned as a Manchester-specific application, it was created to foster a community-driven approach in an ever-expanding city. This platform allows users to browse upcoming events, sign up for them, and integrate them with Google Calendar. Additionally, staff members have special privileges to create and manage events, ensuring smooth event coordination.
+
+The **backend** of the platform was built using **Express.js** and is hosted on **Render** at [SE Events Backend](https://se-events-platform-be.onrender.com/). This ensures a reliable API for handling authentication, event management, and user interactions.
+
+The **frontend** was developed using **React**, allowing for dynamic rendering and efficient re-renders without requiring users to refresh or close the browser. This enhances the user experience by providing smooth, real-time updates to the event listings and user interactions.
 
 ## Features
 - Browse a list of events
 - Sign up for an event
 - Add events to Google Calendar
 - Staff member sign-in for event management
+- Secure user authentication
 
 ## Tech Stack
-- **Frontend**: JavaScript / TypeScript, React / React Native
+- **Frontend**: JavaScript, React / React Native
 - **Build Tool**: Vite
 - **Authentication**: User authentication implemented
 - **Calendar Integration**: Google Calendar API
+- **Backend**: Express.js, hosted on Render
+
+## Live Demo
+You can access the hosted application here:
+👉 **[Live Demo](https://jackcowling123.github.io/SE_Events_platform_FE/)**
 
 ## Installation & Setup
 ### Prerequisites
@@ -23,7 +33,7 @@ This is a web-based platform that allows community members to view, sign up for,
 ### Steps
 1. **Clone the repository**
    ```sh
-   git clone https://github.com/JackCowling123/SE_Events_platform_BE
+   git clone https://github.com/JackCowling123/SE_Events_platform_FE
    cd SE_Events_platform_FE/frontend
    ```
 2. **Install dependencies**
