@@ -7,6 +7,10 @@ The **backend** of the platform was built using **Express.js** and is hosted on 
 
 The **frontend** was developed using **React**, allowing for dynamic rendering and efficient re-renders without requiring users to refresh or close the browser. This enhances the user experience by providing smooth, real-time updates to the event listings and user interactions.
 
+## Live Demo
+You can access the hosted application here:
+👉 **[Live Demo](https://jackcowling123.github.io/SE_Events_platform_FE/)**
+
 ## Features
 - Browse a list of events
 - Sign up for an event
@@ -20,10 +24,6 @@ The **frontend** was developed using **React**, allowing for dynamic rendering a
 - **Authentication**: User authentication implemented
 - **Calendar Integration**: Google Calendar API
 - **Backend**: Express.js, hosted on Render
-
-## Live Demo
-You can access the hosted application here:
-👉 **[Live Demo](https://jackcowling123.github.io/SE_Events_platform_FE/)**
 
 ## Installation & Setup
 ### Prerequisites
