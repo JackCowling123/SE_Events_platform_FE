@@ -10,6 +10,18 @@ The **frontend** was developed using **React**, allowing for dynamic rendering a
 ## Live Demo
 You can access the hosted application here:
 👉 **[Live Demo](https://jackcowling123.github.io/SE_Events_platform_FE/)**
+---
+
+### 👤 Test Admin Login
+
+To test admin functionality (e.g., adding events), use the following credentials:
+
+- **Email:** `BigAdmin@gmail.com`  
+- **Password:** `BigAdmin123`
+
+Once logged in, you'll see the **"Create Event"** button appear on the Events page.
+
+---
 
 ## Features
 - Browse a list of events
