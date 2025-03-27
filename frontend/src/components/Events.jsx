@@ -30,8 +30,14 @@ function Events() {
     };
 
     return (
-        <div style={{ width: "100vw", padding: "20px", margin: "0 auto" }}>
-            <h1 style={{ textAlign: "center", marginBottom: "20px" }}>Upcoming Events</h1>
+        <div style={{
+            width: "100%",
+            maxWidth: "1000px",
+            margin: "0 auto",
+            padding: "20px 10px",
+            boxSizing: "border-box"
+        }}>
+        <h1 style={{ textAlign: "center", marginBottom: "20px" }}>Upcoming Events</h1>
 
             {role === "admin" && (
                 <Button
@@ -45,10 +51,10 @@ function Events() {
 
             <div style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
+                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
                 gap: "20px",
-                maxWidth: "1400px",
-                margin: "0 auto"
+                width: "100%",
+                boxSizing: "border-box"
             }}>
                 {events.map((event) => (
                     <Card

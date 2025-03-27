@@ -1,8 +1,13 @@
 import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: '/SE_Events_platform_FE/', // Add this line
+  plugins: [react()],
+  base: '/SE_Events_platform_FE/',
   build: {
-    outDir: 'dist', // Ensure it's using the correct folder
-  }
+    outDir: 'dist'
+  },
+  server: {
+    historyApiFallback: true,
+  },
 });

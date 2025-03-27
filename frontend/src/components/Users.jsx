@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Tabs, Form, Input, Button, Alert, Checkbox } from "antd";
+import { useNavigate } from "react-router-dom"; // ✅ navigation hook
 
 const { TabPane } = Tabs;
 const API_URL = "https://se-events-platform-be.onrender.com/api/auth";
@@ -9,6 +10,8 @@ const Users = ({ loginUser, setIsLoggedIn, setUserEmail }) => {
     const [error, setError] = useState(null);
     const [success, setSuccess] = useState(null);
     const [activeTab, setActiveTab] = useState("login");
+
+    const navigate = useNavigate(); // ✅ init router
 
     useEffect(() => {
         const token = localStorage.getItem("token");
@@ -41,6 +44,8 @@ const Users = ({ loginUser, setIsLoggedIn, setUserEmail }) => {
             localStorage.setItem("userEmail", credentials.email);
             setIsLoggedIn(true);
             setUserEmail(credentials.email);
+
+            navigate("/events"); // ✅ redirect after login
         } catch (err) {
             setError(err.message || "Login failed");
         } finally {
@@ -82,15 +87,13 @@ const Users = ({ loginUser, setIsLoggedIn, setUserEmail }) => {
             setIsLoggedIn(true);
             setUserEmail(userData.email);
 
-            setActiveTab("login");
+            navigate("/events"); // ✅ redirect after signup
         } catch (err) {
             setError(err.message || "Signup failed");
         } finally {
             setLoading(false);
         }
     };
-
-
 
     const logout = () => {
         localStorage.removeItem("token");
@@ -101,7 +104,14 @@ const Users = ({ loginUser, setIsLoggedIn, setUserEmail }) => {
 
     return (
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "70vh" }}>
-            <div style={{ width: "340px", padding: "20px", border: "1px solid #ddd", borderRadius: "10px", boxShadow: "0px 4px 6px rgba(0,0,0,0.1)", backgroundColor: "#fff" }}>
+            <div style={{
+                width: "340px",
+                padding: "20px",
+                border: "1px solid #ddd",
+                borderRadius: "10px",
+                boxShadow: "0px 4px 6px rgba(0,0,0,0.1)",
+                backgroundColor: "#fff"
+            }}>
                 <Tabs activeKey={activeTab} onChange={setActiveTab} centered>
                     <TabPane tab="Login" key="login">
                         <h2 style={{ textAlign: "center" }}>Login</h2>
@@ -150,7 +160,6 @@ const Users = ({ loginUser, setIsLoggedIn, setUserEmail }) => {
                                 <Input.Password placeholder="Confirm Password" />
                             </Form.Item>
 
-                            {/* 🟢 Checkbox for Admin Signup */}
                             <Form.Item name="isAdmin" valuePropName="checked">
                                 <Checkbox>Sign up as Admin</Checkbox>
                             </Form.Item>
@@ -160,7 +169,6 @@ const Users = ({ loginUser, setIsLoggedIn, setUserEmail }) => {
                             </Button>
                         </Form>
                     </TabPane>
-
                 </Tabs>
             </div>
         </div>

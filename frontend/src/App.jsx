@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { Layout } from "antd";
 import Navigation from "./components/Navigation";
 import Home from "./components/Home";
@@ -64,7 +64,16 @@ function App() {
             <Layout>
                 <Navigation isLoggedIn={isLoggedIn} userEmail={userEmail} logout={logout} />
 
-                <Content style={{ width: "100vw", padding: "20px", minHeight: "80vh" }}>
+                <Content
+                    style={{
+                        width: "100%",
+                        maxWidth: "1000px",
+                        margin: "0 auto",
+                        padding: "20px 10px",
+                        minHeight: "80vh",
+                        boxSizing: "border-box",
+                    }}
+                >
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/events" element={<Events />} />
